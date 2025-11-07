@@ -1,4 +1,30 @@
-# (이전 코드에서 약수 리스트 'result'를 구했다고 가정)
+import sys
+import math
 
-# 약수 리스트의 모든 요소를 문자열로 변환하고 쉼표(,)로 연결하여 출력
-print(",".join(map(str, result)))
+def find_divisors(number):
+    """주어진 숫자의 약수를 찾아 리스트로 반환합니다."""
+    divisors = []
+    # 1부터 숫자까지 반복하며 약수를 찾습니다.
+    for i in range(1, number + 1):
+        if number % i == 0:
+            divisors.append(i)
+    return divisors
+
+if __name__ == "__main__":
+    try:
+        # 1. 먼저 명령줄 인수를 받습니다.
+        input_number = int(sys.argv[1])
+        
+        # 2. 인수를 바탕으로 약수를 계산하고, 그 결과를 'result' 변수에 저장합니다.
+        # (변수 이름이 '결과'라면 '결과'로, 'result'라면 'result'로 통일하세요)
+        result = find_divisors(input_number) 
+        
+        # 3. 모든 계산이 끝난 후, 맨 마지막에 결과를 출력합니다.
+        # (로그의 4행에 있던 코드를 여기로 옮깁니다)
+        print(",".join(map(str, result))) 
+        
+    except ValueError:
+        sys.exit(1)
+    except IndexError:
+        # 혹시 인수가 없을 때를 대비
+        sys.exit(1)

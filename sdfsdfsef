@@ -12,7 +12,7 @@ def find_divisors(number):
 
 if __name__ == "__main__":
     try:
-        # 1. 먼저 명령줄 인수를 받습니다.
+        
         input_number = int(sys.argv[1])
         
         # 2. 인수를 바탕으로 약수를 계산하고, 그 결과를 'result' 변수에 저장합니다.
